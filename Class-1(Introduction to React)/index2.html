@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -16,25 +17,19 @@
   <body>
     <div id="root"></div>
   </body>
-  <script>
-    // This is how you do it with DOM
-    // let root = document.getElementById("root");
-    // let heading1 = document.createElement("h1");
+  <script type="text/babel">
+    // Component Architecture of React
+    function App() {
+      return (
+        <div style={{ color: "blue", margin: "10px" }}>
+          <a style={{ color: "blue", margin: "10px" }}>Home</a>
+          <a style={{ color: "blue", margin: "10px" }}>About</a>
+          <a style={{ color: "blue", margin: "10px" }}>Contact</a>
+          <a style={{ color: "blue", margin: "10px" }}>Testimonials</a>
+        </div>
+      );
+    } // JSX
 
-    // heading1.innerText = "Hello";
-
-    // root.appendChild(heading1);
-
-    // React
-
-    const root = document.getElementById("root");
-
-    const heading1 = React.createElement(
-      "h1",
-      { style: { color: "red" } },
-      "hello"
-    );
-
-    ReactDOM.render(heading1, root);
+    ReactDOM.render(<App />, document.getElementById("root"));
   </script>
 </html>
