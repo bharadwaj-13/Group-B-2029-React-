@@ -1,0 +1,16 @@
+import React from "react";
+import "./Card.css";
+
+function Card({title , content , footerData}) {
+  return (
+    <div className="card">
+      <div className="card-title">{title}</div>
+      <div className="card-content">
+        {content}
+      </div>
+      <div className="card-footer">{footerData}</div>
+    </div>
+  );
+}
+
+export default Card;
