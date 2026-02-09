@@ -6,8 +6,13 @@
 //     Adds a button to toggle email visibility.
 
 import React, { useState } from "react";
+import { User } from "./user.js";
 
 function UserCard() {
+  const [showEmail, setShowEmail] = useState(false);
+
+  console.log(showEmail);
+
   return (
     <div
       style={{
@@ -17,7 +22,22 @@ function UserCard() {
         textAlign: "center",
         backgroundColor: "dodgerblue",
       }}
-    ></div>
+    >
+      <img src={User.picture.large} />
+
+      <p>
+        Name :{User.name.first} {User.name.last}
+      </p>
+
+      <p>{showEmail && User.email}</p>
+
+      <button onClick={() => setShowEmail(true)}>Show Email</button>
+      <button onClick={() => setShowEmail(false)}>Hide Email</button>
+
+      <p>
+        Age : {User.dob.age} ({User.dob.age >= 18 ? "Adult" : "Minor"})
+      </p>
+    </div>
   );
 }
 

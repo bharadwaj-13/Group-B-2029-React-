@@ -1,6 +1,7 @@
 import './App.css'
 import Counter from './components/Counter'
 import Form from './components/Form'
+import UserCard from './components/UserCard'
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
   return (
     <div>
        {/* <Counter/> */}
-       <Form/>
+       {/* <Form/> */}
+       <UserCard/>
 
     </div>
   )
